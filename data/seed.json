@@ -1,0 +1,133 @@
+{
+  "lanes": [
+    { "id": "program", "name": "Program" },
+    { "id": "eng", "name": "Engineering" },
+    { "id": "qa", "name": "QA" },
+    { "id": "design", "name": "Design" },
+    { "id": "unassigned", "name": "Unassigned" }
+  ],
+  "tasks": [
+    {
+      "id": "task-brief",
+      "name": "Kickoff Brief",
+      "start": "2025-10-21",
+      "end": "2025-10-24",
+      "laneId": "program",
+      "assignee": "Jamie",
+      "deps": [],
+      "milestone": false
+    },
+    {
+      "id": "task-plan",
+      "name": "Roadmap Planning",
+      "start": "2025-10-24",
+      "end": "2025-10-31",
+      "laneId": "program",
+      "assignee": "Priya",
+      "deps": ["task-brief"],
+      "milestone": false
+    },
+    {
+      "id": "task-overlap-program",
+      "name": "Stakeholder Reviews",
+      "start": "2025-10-28",
+      "end": "2025-11-01",
+      "laneId": "program",
+      "assignee": "Chris",
+      "deps": ["task-plan"],
+      "milestone": false
+    },
+    {
+      "id": "task-design",
+      "name": "UX Concepts",
+      "start": "2025-10-23",
+      "end": "2025-10-31",
+      "laneId": "design",
+      "assignee": "Avery",
+      "deps": ["task-brief"],
+      "milestone": false
+    },
+    {
+      "id": "task-design-polish",
+      "name": "Design Polish",
+      "start": "2025-10-31",
+      "end": "2025-11-05",
+      "laneId": "design",
+      "assignee": "Morgan",
+      "deps": ["task-design"],
+      "milestone": false
+    },
+    {
+      "id": "task-eng-build",
+      "name": "Sprint Build",
+      "start": "2025-10-26",
+      "end": "2025-11-06",
+      "laneId": "eng",
+      "assignee": "Sasha",
+      "deps": ["task-brief"],
+      "milestone": false
+    },
+    {
+      "id": "task-eng-hardening",
+      "name": "API Hardening",
+      "start": "2025-11-04",
+      "end": "2025-11-10",
+      "laneId": "eng",
+      "assignee": "Mina",
+      "deps": ["task-eng-build"],
+      "milestone": false
+    },
+    {
+      "id": "task-qa-plan",
+      "name": "Test Plan",
+      "start": "2025-10-30",
+      "end": "2025-11-03",
+      "laneId": "qa",
+      "assignee": "Diego",
+      "deps": ["task-eng-build"],
+      "milestone": false
+    },
+    {
+      "id": "task-qa-run",
+      "name": "Regression Run",
+      "start": "2025-11-04",
+      "end": "2025-11-12",
+      "laneId": "qa",
+      "assignee": "Alex",
+      "deps": ["task-eng-hardening"],
+      "milestone": false
+    },
+    {
+      "id": "task-review",
+      "name": "Mid-Release Review",
+      "start": "2025-10-29",
+      "end": "2025-10-29",
+      "laneId": "program",
+      "assignee": "Priya",
+      "deps": ["task-plan"],
+      "milestone": true
+    },
+    {
+      "id": "task-signoff",
+      "name": "QA Sign-off",
+      "start": "2025-11-12",
+      "end": "2025-11-12",
+      "laneId": "qa",
+      "assignee": "Diego",
+      "deps": ["task-qa-run"],
+      "milestone": true
+    },
+    {
+      "id": "task-launch",
+      "name": "Launch Readiness",
+      "start": "2025-11-13",
+      "end": "2025-11-15",
+      "laneId": "unassigned",
+      "assignee": "Team",
+      "deps": ["task-signoff"],
+      "milestone": false
+    }
+  ],
+  "zoom": "month",
+  "density": "compact"
+}
