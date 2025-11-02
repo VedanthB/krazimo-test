@@ -1,0 +1,27 @@
+{
+  "lanes": [
+    { "id": "team-a", "name": "Team A" },
+    { "id": "team-b", "name": "Team B" },
+    { "id": "unassigned", "name": "Unassigned" }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "name": "Design wireframes",
+      "laneId": "team-a",
+      "start": "2025-10-06",
+      "end": "2025-10-15",
+      "assignee": "SK",
+      "deps": []
+    },
+    {
+      "id": "t2",
+      "name": "API scaffolding",
+      "laneId": "team-b",
+      "start": "2025-10-10",
+      "end": "2025-10-20",
+      "assignee": "PP",
+      "deps": ["t1"]
+    }
+  ]
+}
