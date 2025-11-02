@@ -1,3 +1,20 @@
+## Project Brief (Masterplan Summary)
+
+- **Overview**: Interactive Gantt/timeline board (Next.js + Tailwind + shadcn/ui) that mirrors Asana/Monday UX. Drag, resize, reassign tasks while preserving timeline clarity and conflict awareness.
+- **Target audience**: UI engineers evaluating the component, PM/product teams validating timelines, and developers extending the prototype.
+- **Must-haves**: Horizontal zoomable timeline (Week/Month baseline), vertical lanes (Team A/B/Unassigned), draggable/resizable task bars with day snapping, side panel editing, conflict detection within lanes, JSON import/export, localStorage persistence, sticky headers, keyboard navigation + ARIA affordances, responsive layout (mobile read-only).
+- **Extras delivered historically**: Milestones, dependency arrows (initial concepts), today marker with auto-scroll.
+- **Architecture sketch**:
+  - `app/` for layout/page/error boundary.
+  - `components/timeline/` (DateAxis, Lane, TaskBar, TodayMarker, etc.).
+  - `components/panel/TaskPanel.tsx`.
+  - `lib/` for date/conflict/storage helpers.
+  - `hooks/` for timeline state and viewport helpers.
+  - Seed data in `data/seed.json`.
+- **Assignment guardrails**: No prebuilt Gantt libs, use date-fns, rely on @dnd-kit, focus on accessibility (focus rings, keyboard), highlight conflicts, deliver README + PLAN write-up.
+
+---
+
 ## 1. Implemented Features
 
 - **Timeline canvas**: Sticky axis, four zoom modes (Week/Month/Quarter/Year), density presets, smooth auto-scroll to today or the active task.

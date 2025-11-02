@@ -41,7 +41,10 @@ Visit http://localhost:3000 to use the timeline.
 | `pnpm format` | Prettier check (Tailwind plugin enabled).       |
 | `pnpm test`   | Unit tests via Vitest (skeleton for expansion). |
 
-Husky + lint-staged run the lint/format pipeline on commit.
+Husky hooks provide guardrails:
+
+- `pre-commit`: runs lint-staged for targeted format/lint fixes.
+- `pre-push`: executes `pnpm lint` and `pnpm test` to catch issues before CI.
 
 ## Data & Testing Tips
 
