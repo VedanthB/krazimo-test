@@ -1,6 +1,6 @@
 "use client";
 
-import type { DraggableSyntheticListeners } from "@dnd-kit/core";
+import type { DraggableAttributes, DraggableSyntheticListeners } from "@dnd-kit/core";
 
 import { cn } from "@/lib/utils";
 
@@ -8,7 +8,7 @@ interface ResizeHandleProps {
   direction: "start" | "end";
   setNodeRef: (element: HTMLElement | null) => void;
   listeners?: DraggableSyntheticListeners;
-  attributes?: Record<string, unknown>;
+  attributes?: DraggableAttributes;
   isActive?: boolean;
 }
 

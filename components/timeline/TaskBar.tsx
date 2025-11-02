@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, type KeyboardEvent } from "react";
+import { useMemo, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import { EllipsisVertical } from "lucide-react";
 import { useDraggable } from "@dnd-kit/core";
 import { addDays, format, parseISO } from "date-fns";
@@ -232,7 +232,7 @@ export function TaskBar({ task, top }: TaskBarProps) {
     updateTask({ ...task, laneId: targetLane.id });
   };
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+  const handleKeyDown = (event: ReactKeyboardEvent<HTMLElement>) => {
     switch (event.key) {
       case "ArrowRight": {
         event.preventDefault();
